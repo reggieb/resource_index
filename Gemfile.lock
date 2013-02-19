@@ -2,7 +2,8 @@ PATH
   remote: .
   specs:
     resource_index (0.0.1)
-      rails (~> 3.2.11)
+      xapian-fu
+      xapian-ruby
 
 GEM
   remote: http://rubygems.org/
@@ -88,11 +89,14 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.35)
+    xapian-fu (1.5.0)
+    xapian-ruby (1.2.12)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   jquery-rails
+  rails
   resource_index!
   sqlite3
