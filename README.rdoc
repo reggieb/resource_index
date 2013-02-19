@@ -1,3 +1,97 @@
 = ResourceIndex
 
-This project rocks and uses MIT-LICENSE.
+Uses Xapian index search to speed up searching ActiveResource objects and reduce 
+calls to backend service.
+
+ActiveResource is good for gathering all objects or one object from a remote
+service api. ResourceIndex provides tools to help you identify the one from
+the all, in an efficient way, and without many calls to the remote service.
+
+== Designed for ActiveResource but not dependent on it
+
+ResourceIndex has been designed to work with ActiveResource object, but can
+be used on other objects. For example, the tests run on ActiveRecord objects.
+
+See /test/dummy/app/models/thing.rb
+
+== Installation
+
+Add this to your Gemfile:
+
+    gem 'resource_index'
+
+Note that there is a dependency on xapian-ruby, and this can take a few minutes
+to install
+
+== Usage 
+
+Extend ResourceIndex::SearchEngine on any objects you wish to use ResourceIndex
+with. For example:
+
+    class Thing < ActiveResource::Base
+
+      extend ResourceIndex::SearchEngine
+
+    end
+
+Thing then gets the the following class methods:
+
+[Thing.search]                  The main method used to find objects
+
+[Thing.search_engine]           Container for the xapian db engine being used by Thing
+
+[Thing.populate_search_engine]  Populates the thing index with the data from all Things
+
+=== Search
+
+To get all the things containing 'Something':
+
+    search = Thing.search('Something')
+    things = search.collect{|s| Thing.find(s.id)}
+
+Search results are weighted and returned in the order of the most relevant.
+Google 'xapian weighting' for more information on the algorithms used. To find
+the most relevant 'something':
+
+    search = Thing.search('Something')
+    thing = Thing.find(search.first.id)
+
+The search results contain the attributes of the objects being searched, and
+therefore you do not have to retrieve the object to provide meaningful information:
+
+    search = Thing.search('Something')
+    names = search.collect{|match| match.values[:name]}
+
+=== Search Engine
+
+ResoureIndex uses xapian-fu's XapianDb to provide its functionality. The
+current XapianDb object is exposed via the search_engine class method. See 
+https://github.com/johnl/xapian-fu
+
+By default, when ResourceIndex is installed within a Rails app, the index databases
+will be installed at /db/resource_index. You can specify a different location:
+
+    ResourceIndex::Search.root = 'path/to/dir'
+
+If you specify the location, that location should exist or you may get errors.
+
+=== Populate Search Engine
+
+The populate_search_engine method will replace the existing Xapian database
+with one populated from all the objects currently returned by the remote service.
+
+    Thing..populate_search_engine
+
+Will add all the things gathered by Thing.all, and create index entries for them.
+
+=== Spelling correction hints
+
+Xapian provides a spelling correction prompt if no records match the current
+search:
+
+    Thing.create :name => 'Moose'
+    results = Thing.search 'mouse'
+    unless results.corrected_query.empty?
+      puts "Did you mean '#{results.corrected_query}'" --> "Did you mean 'moose'"
+    end
+

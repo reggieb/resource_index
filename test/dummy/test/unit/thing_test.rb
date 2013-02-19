@@ -2,10 +2,6 @@ require 'test_helper'
 
 class ThingTest < ActiveSupport::TestCase
   
-#  def setup
-#    @thing = Thing.find(1)
-#  end
-  
   def test_responds_to_required_class_methods
     class_methods_required = %w{all find first}
     class_methods_required.each{|m| assert Thing.respond_to? m, "should respond to #{m}"}
