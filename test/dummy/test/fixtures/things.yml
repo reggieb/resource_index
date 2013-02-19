@@ -1,0 +1,101 @@
+# Cast and crew of skeletons http://www.skeletonsthemovie.com/
+
+davis:
+  id: 1
+  role: DAVIS	
+  name: ED GAUGHAN
+
+bennett:
+  id: 2
+  role: BENNETT	
+  name: ANDREW BUCKLEY
+
+colonel:
+  id: 3
+  role: THE COLONEL	
+  name: JASON ISAACS
+
+jane:
+  id: 4
+  role: JANE	
+  name: PAPRIKA STEEN
+
+rebecca:
+  id: 5
+  role: REBECCA	
+  name: TUPPENCE MIDDLETON
+
+jo-jo:
+  id: 6
+  role: JO-JO
+  name: JOSEF WHITFIELD
+
+director:
+  id: 7
+  role: WRITER/DIRECTOR	
+  name: NICK WHITFIELD
+
+producer_one:
+  id: 8
+  role: PRODUCER
+  name: TRACY BRIMM
+  
+producer_two:
+  id: 9
+  role: PRODUCER
+  name: KATE MYERS
+  
+producer_three:
+  id: 10
+  role: PRODUCER
+  name: PAUL WELSH
+
+exec_producer_one:
+  id: 11
+  role: EXECUTIVE PRODUCER
+  name: SUZANNE ALIZART
+
+exec_producer_two:
+  id: 12
+  role: EXECUTIVE PRODUCER
+  name: ROBBIE ALLEN
+
+exec_producer_three:
+  id: 13
+  role: EXECUTIVE PRODUCER
+  name: ANNA SEIFERT-SPECK
+
+photographer:
+  id: 14
+  role: DIRECTOR OF PHOTOGRAPHY
+  name: ZAC NICHOLSON
+
+editor:
+  id: 15
+  role: EDITOR
+  name: RACHEL TUNNARD
+
+composer:
+  id: 16
+  role: COMPOSER
+  name: SIMON WHITFIELD
+
+designer:
+  id: 17
+  role: PRODUCTION DESIGN	
+  name: JAMES LAPSLEY
+
+make_up:
+  id: 18
+  role: HAIR & MAKE UP DESIGN
+  name: SUSANNA PERETZ
+
+costume:
+  id: 19
+  role: COSTUME DESIGN
+  name: ALISON MCLAUGHLIN
+
+sound:
+  id: 20
+  role: SUPERVISING SOUND EDITOR
+  name: JOAKIM SUNDSTROM
