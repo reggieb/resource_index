@@ -1,7 +1,7 @@
-= ResourceIndex
+= Resource Index
 
 Uses Xapian index search to speed up searching ActiveResource objects and reduce 
-calls to backend service.
+calls to backend services.
 
 ActiveResource is good for gathering all objects or one object from a remote
 service api. ResourceIndex provides tools to help you identify the one from
@@ -32,16 +32,13 @@ For installation information see: http://xapian.org
 
 == Usage 
 
-Extend ResourceIndex::SearchEngine on any objects you wish to use ResourceIndex. 
-For example:
-
     class Thing < ActiveResource::Base
 
       extend ResourceIndex::SearchEngine
 
     end
 
-Thing then gets the the following class methods:
+Thing gets the the following class methods:
 
 [Thing.search]                  The main method used to find objects
 
@@ -87,7 +84,7 @@ Each indexed object gets its own folder within the search root, so you do not
 have to specify a root for each object. For example, the index files for Thing
 will be created in db/resource_index/thing/
 
-To prevent these files being version controller, add this to your project root
+To prevent these files being version controlled, add this to your project root
 .gitignore file (or equivalent):
 
     /db/resource_index/* 
@@ -99,10 +96,9 @@ with one populated from all the objects currently returned by the remote service
 
     Thing.populate_search_engine
 
-Will add all the things gathered by Thing.all, and create index entries for them.
+This will add all the things gathered by Thing.all, and create index entries for them.
 
-There is also a rake task to aid population being triggered externally; for
-example by a cron job:
+There is also a rake task that runs this method on a given resource:
 
     rake resource_index:populate resource=Thing
 
