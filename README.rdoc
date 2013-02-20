@@ -7,9 +7,9 @@ ActiveResource is good for gathering all objects or one object from a remote
 service api. ResourceIndex provides tools to help you identify the one from
 the all, in an efficient way, and without many calls to the remote service.
 
-== Designed for ActiveResource but not dependent on it
+=== Designed for ActiveResource but not dependent on it
 
-ResourceIndex has been designed to work with ActiveResource object, but can
+ResourceIndex has been designed to work with ActiveResource objects, but can
 be used on other objects. For example, the tests run on ActiveRecord objects.
 
 See /test/dummy/app/models/thing.rb
@@ -25,8 +25,8 @@ to install
 
 == Usage 
 
-Extend ResourceIndex::SearchEngine on any objects you wish to use ResourceIndex
-with. For example:
+Extend ResourceIndex::SearchEngine on any objects you wish to use ResourceIndex. 
+For example:
 
     class Thing < ActiveResource::Base
 
