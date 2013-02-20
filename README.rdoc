@@ -83,6 +83,15 @@ will be installed at /db/resource_index. You can specify a different location:
 If you specify the location, the path to that location should exist or you will 
 get errors.
 
+Each indexed object gets its own folder within the search root, so you do not
+have to specify a root for each object. For example, the index files for Thing
+will be created in db/resource_index/thing/
+
+To prevent these files being version controller, add this to your project root
+.gitignore file (or equivalent):
+
+    /db/resource_index/* 
+
 === Populate Search Engine
 
 The populate_search_engine method will replace the existing Xapian database
