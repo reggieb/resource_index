@@ -3,7 +3,6 @@ PATH
   specs:
     resource_index (0.0.1)
       xapian-fu
-      xapian-ruby
 
 GEM
   remote: http://rubygems.org/
@@ -100,3 +99,4 @@ DEPENDENCIES
   rails
   resource_index!
   sqlite3
+  xapian-ruby

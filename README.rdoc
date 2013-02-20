@@ -18,10 +18,17 @@ See /test/dummy/app/models/thing.rb
 
 Add this to your Gemfile:
 
+    gem 'xapian-ruby'  # or use your preferred method of installing xapian with ruby bindings
     gem 'resource_index'
 
-Note that there is a dependency on xapian-ruby, and this can take a few minutes
-to install
+ResourceIndex uses Xapian, and therefore this needs to be installed, along
+with bindings for ruby. I have found the easiest way to achieve this is to use 
+the 'xapian-ruby' gem. 
+
+However, if you already have xapian installed, or wish to use a shared
+Xapian engine, you may wish to install Xapian and the ruby bindings manually.
+For installation information see: http://xapian.org/
+
 
 == Usage 
 
