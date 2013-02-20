@@ -117,3 +117,15 @@ search:
       puts "Did you mean '#{results.corrected_query}'" --> "Did you mean 'moose'"
     end
 
+=== Search options
+
+You can pass options through to the underlying xapian_fu object. 
+See https://github.com/johnl/xapian-fu
+
+For example:
+
+    Thing.search(:all, :page => 1, :per_page => 20)
+
+Note that by default, search returns the first 10 results.
+
+

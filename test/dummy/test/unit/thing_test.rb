@@ -34,4 +34,12 @@ class ThingTest < ActiveSupport::TestCase
     assert_equal(producers.length, things.length)
     assert_equal(producers.collect(&:id).sort, things.collect(&:id).sort)
   end
+  
+  def test_search_with_pagination
+    thing_count = Thing.count
+    [1, 5, 10, 15, 20, 30].each do |page_length|
+      expected = page_length > thing_count ? thing_count : page_length
+      assert_equal(expected, Thing.search(:all, :page => 1, :per_page => page_length).length)
+    end
+  end
 end
