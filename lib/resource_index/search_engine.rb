@@ -10,6 +10,7 @@ module ResourceIndex
       engine = ResourceIndex::Search.engine_for(self, :overwrite => true)
       all.each{|thing| engine << thing.attributes}
       engine.flush
+      "#{self.to_s} search index populated with #{engine.size} entries."
     end
 
     def search(text)

@@ -73,16 +73,26 @@ will be installed at /db/resource_index. You can specify a different location:
 
     ResourceIndex::Search.root = 'path/to/dir'
 
-If you specify the location, that location should exist or you may get errors.
+If you specify the location, the path to that location should exist or you will 
+get errors.
 
 === Populate Search Engine
 
 The populate_search_engine method will replace the existing Xapian database
 with one populated from all the objects currently returned by the remote service.
 
-    Thing..populate_search_engine
+    Thing.populate_search_engine
 
 Will add all the things gathered by Thing.all, and create index entries for them.
+
+There is also a rake task to aid population being triggered externally; for
+example by a cron job:
+
+    rake resource_index:populate resource=Thing
+
+To populate a production system, use:
+
+    rake resource_index:populate resource=Thing RAILS_ENV=production
 
 === Spelling correction hints
 
