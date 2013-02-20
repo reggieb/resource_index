@@ -27,7 +27,7 @@ the 'xapian-ruby' gem.
 
 However, if you already have xapian installed, or wish to use a shared
 Xapian engine, you may wish to install Xapian and the ruby bindings manually.
-For installation information see: http://xapian.org/
+For installation information see: http://xapian.org
 
 
 == Usage 
