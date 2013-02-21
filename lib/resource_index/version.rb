@@ -1,9 +1,17 @@
 module ResourceIndex
-  VERSION = "0.0.3"
+  VERSION = "0.0.5"
 end
 
 # History
 # =======
+# 
+# Version 0.0.5
+# -------------
+# Corrects error in Railtie configuration
+# 
+# Version 0.0.4
+# -------------
+# Adds Railtie to allow rake tasks to be run from within host rails app
 # 
 # Version 0.0.3
 # -------------
