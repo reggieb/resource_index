@@ -18,7 +18,7 @@ See /test/dummy/app/models/thing.rb
 
 Add this to your Gemfile:
 
-    gem 'xapian-ruby'  # or use your preferred method of installing xapian with ruby bindings
+    gem 'xapian-ruby'  # or your preferred method of installing xapian with ruby bindings
     gem 'resource_index'
 
 ResourceIndex uses Xapian, and therefore this needs to be installed, along
@@ -29,6 +29,10 @@ However, if you already have xapian installed, or wish to use a shared
 Xapian engine, you may wish to install Xapian and the ruby bindings manually.
 For installation information see: http://xapian.org
 
+Also if 'xapian-ruby' fails to install, it can be easier to diagnose the 
+underlying issue by trying to install xapian and the bindings manually.
+For example, do discover that you need to install 'uuid-dev' first on some 
+ubuntu systems.
 
 == Usage 
 
