@@ -8,3 +8,6 @@ test/dummy/log/*.log
 test/dummy/tmp/
 test/dummy/.sass-cache
 test/dummy/db/resource_index/*
+
+# Removes Gemfile.lock from repository as this is an engine
+Gemfile.lock
