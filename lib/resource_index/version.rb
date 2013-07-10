@@ -1,9 +1,14 @@
 module ResourceIndex
-  VERSION = "0.0.5"
+  VERSION = "0.1.0"
 end
 
 # History
 # =======
+#
+# Version 0.1.0
+# -------------
+# Removes requirement for resource to have a first method.
+# Used in a couple of apps now, so moving to beta.
 # 
 # Version 0.0.5
 # -------------

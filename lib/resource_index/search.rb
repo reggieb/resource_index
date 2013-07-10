@@ -5,7 +5,7 @@ module ResourceIndex
   class Search < XapianDb
     
     def self.engine_for(klass, args = {})
-      instance = klass.first
+      instance = klass.new
       config = {
         :dir => klass.to_s.downcase,
         :store => instance.attributes.keys,
